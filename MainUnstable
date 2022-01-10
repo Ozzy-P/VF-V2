@@ -1,0 +1,222 @@
+--Crashes vinns for some reason??
+
+
+pcall(function() game.Players.LocalPlayer.Character.RightHand:Destroy() end)
+
+
+
+
+--Recommended interval to prevent internal roblox kick. Might affect performance depending on specs.
+local ROBLOX_CLIENT_NETWORK_MAX = string.len(_G.Sentence) * (15/100)
+
+--[[
+███████╗░░░░█████╗░░░░  ░██████╗██╗░░░██╗░██████╗████████╗███████╗███╗░░░███╗
+██╔════╝░░░██╔══██╗░░░  ██╔════╝╚██╗░██╔╝██╔════╝╚══██╔══╝██╔════╝████╗░████║
+█████╗░░░░░███████║░░░  ╚█████╗░░╚████╔╝░╚█████╗░░░░██║░░░█████╗░░██╔████╔██║
+██╔══╝░░░░░██╔══██║░░░  ░╚═══██╗░░╚██╔╝░░░╚═══██╗░░░██║░░░██╔══╝░░██║╚██╔╝██║
+██║░░░░░██╗██║░░██║██╗  ██████╔╝░░░██║░░░██████╔╝░░░██║░░░███████╗██║░╚═╝░██║
+╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝  ╚═════╝░░░░╚═╝░░░╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░░░░╚═╝
+--]]
+
+--[[
+Version Copy (Debug ID):
+FA!
+4473273+16-1.7!3!6!5_21713373+128-1.7!3!6!5_869380861971+524288-1.7!3!6!5_2513388762+8192-1.7!3!6!5_614775+2-1.7!3!6!5_6370674+16-1.7!3!6!5_652409343+1024-1.7!3!6!5_82543569+1024-1.7!3!6!5_616955464506+4194304-1.7!3!6!5_616955464506+4194304-1.7!3!6!5_696164286345+4194304-1.7!3!6!5_82543569+1024-1.7!3!6!5_0082543569+65536-1.7!3!6!5_40571583147+524288-1.7!3!6!5_0086532+16-1.7!3!6!5_25996038657+524288-1.7!3!6!5_2979028716+65536-1.7!3!6!5_4473830649+65536-1.7!3!6!5_8252622+16-1.7!3!6!5_40117812+128-1.7!3!6!5_46658991+128-1.7!3!6!5_806868651+1024-1.7!3!6!5_2979028716+65536-1.7!3!6!5_02701542+128-1.7!3!6!5_4669828581+8192-1.7!3!6!5
+--]]
+
+
+if not _G.BindDisconnect then
+    _G.BindDisconnect = true
+    local QEvent
+    local UserInputService = game:GetService("UserInputService")
+    QEvent = UserInputService.InputBegan:Connect(function(x,Observable)
+        if Observable then return end
+        if x.KeyCode == Enum.KeyCode.Q then 
+            workspace.Name = "Steins;Gate"
+            task.wait(.5)
+            workspace.Name = "Workspace"
+            for _,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+                if v.Name == "UwU" then
+                    v:Destroy()
+                end
+            end
+            local hasEmpty = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Tool")
+            if hasEmpty then
+                hasEmpty:Destroy()
+            end
+        end 
+    end)
+end
+
+local AI = string.upper(_G.Sentence)
+local SLength = string.len(_G.Sentence)
+
+local p,s = pcall(function()
+	local function FA_SYNC()
+		local a={task.wait,task.delay}local b=a[1]local c=game:GetService("Players").LocalPlayer;local d,e=pcall(function()local f=Instance.new("BindableEvent")local g=f;local h={}local function i(j,k)local l;while workspace.Name=="Workspace"do b(ROBLOX_CLIENT_NETWORK_MAX)f:Fire()end;assert(#h~=0,"Failed to start syncAPI.")for m,n in pairs(h)do n:Disconnect()end end;local function o(p,q)local r=coroutine.create(i)coroutine.resume(r,p,q)end;o(i,"1","2")
+
+local function t(j,k)local l;l=f.Event:Connect(function()if workspace.Name~='Workspace'then l:Disconnect()else j.Parent=c.Character;
+for _,v in pairs(c.Character.RightHand:GetChildren()) do
+if v.Name == "RightGrip" then v:Destroy() end end
+
+b(ROBLOX_CLIENT_NETWORK_MAX)j.Parent=c.Backpack end end)
+
+end;local function u(p,q)local r=coroutine.create(t)coroutine.resume(r,p,q)end;local v={}local w,x=Instance.new('BindableEvent',script),nil;v.__index=v;function v.SyncAPI(y)local z;local self=setmetatable({},v)z=w.Event:Connect(function(A)u(y,A)end)table.insert(h,z)end;
+for B,C in pairs(c.Backpack:GetChildren()) do 
+ if C:IsA('Tool')and C.Name=="UwU"
+    then v.SyncAPI(C)
+end end;w:Fire(s)end)warn(d,e)
+	end
+
+
+	if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Tool") then
+    		local tool = Instance.new("Tool")
+    		local handle = Instance.new("Part")
+    		handle.Name = "Handle"
+    		handle.Parent = tool
+    		tool.Parent = game:GetService("Players").LocalPlayer.Character
+	end
+
+	local V3 = Vector3.new
+	local library = {
+	 A = {V3(0.5,0),V3(1,0),V3(2,0),V3(2.5,0),V3(1.5,2),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(3,1),V3(3,2),V3(3,3),V3(3,4),},
+	 B = {V3(0,0),V3(1,0),V3(2.5,0),V3(1.5,2),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(3,1),V3(3,2),V3(3,3),V3(2.5,4),V3(1,4),},
+	 C = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(2,0),V3(3,0),V3(2,4),V3(3,4)},
+	 D = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(1,0),V3(2,0),V3(3,1),V3(3,2),V3(3,3),V3(1,4),V3(2,4)},
+	 E = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(1,0),V3(2,0),V3(3,0),V3(1,4),V3(2,4),V3(3,4),V3(1,2),V3(2,2)},
+	 F = {V3(0,0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(2,0),V3(3,0),V3(2,2)},
+	 G = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(1,0),V3(2,0),V3(3,0),V3(1,4),V3(2,4),V3(3,4),V3(3,2),V3(2.5,2),V3(3,3)},
+	 H = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(1.5,2),V3(3,0),V3(3,1),V3(3,2),V3(3,3),V3(3,4),},
+	 I = {V3(1,0),V3(1.5,1),V3(1.5,2),V3(1.5,3),V3(1.5,4),V3(0,0,0),V3(2,0),V3(3,0),V3(0,4),V3(1,4),V3(2,4),V3(3,4),},
+	 J = {V3(0,0,0),V3(1,0),V3(1.5,1),V3(1.5,2),V3(1.5,3),V3(1.5,4),V3(2,0),V3(3,0),V3(0,4),V3(1,4)},
+	 K = {V3(0,0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(2,2),V3(3,1),V3(3,0),V3(3,3),V3(3,4)},
+	 L = {V3(0,0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(1,4),V3(2,4)},
+	 M = {V3(-2,1),V3(-2,2),V3(-2,3),V3(-2,4),V3(-2,0),V3(-0.5,1),V3(1,2),V3(2.5,1),V3(4,0),V3(4,4),V3(4,3),V3(4,2),V3(4,1)},
+	 N = {V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(0,0),V3(1.5,1),V3(3,2),V3(4,0),V3(4,4),V3(4,3),V3(4,2),V3(4,1)},
+	 O = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(3,0),V3(3,0),V3(3,1),V3(3,2),V3(3,3),V3(3,4),V3(2,0),V3(3,0),V3(2,4),V3(3,4),},
+	 P = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(1,0),V3(2,0),V3(3,0),V3(3,1),V3(3,2),V3(2,2),V3(1,2)},
+	 Q = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(3,0),V3(3,0),V3(3,1),V3(3,2),V3(3,3),V3(3,4),V3(2,0),V3(3,0),V3(2,4),V3(3,4),V3(4,4)},
+	 R = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(1,0),V3(2,0),V3(3,0),V3(3,1),V3(3,2),V3(2,2),V3(1,2),V3(2,3),V3(3,4)},
+	 S = {V3(0,0,0),V3(1,0,0),V3(2,0,0),V3(3,0,0),V3(0,1,0),V3(0,2,0),V3(2,2,0),V3(3,2,0),V3(3,3,0),V3(0,4,0),V3(1,4,0),V3(2,4,0),V3(3,4,0)},
+	 T = {V3(0,0,0),V3(1,0,0),V3(2,0,0),V3(3,0,0),V3(1.5,1,0),V3(1.5,2,0),V3(1.5,3,0),V3(1.5,4,0),},
+	 U = {V3(0,0,0),V3(0,1,0),V3(0,2,0),V3(0,3,0),V3(0,4,0),V3(3,0,0),V3(3,0,0),V3(3,1,0),V3(3,2,0),V3(3,3,0),V3(3,4,0),V3(2,4,0),V3(3,4,0)},
+	 V = {V3(0,0),V3(0,1),V3(0.25,2),V3(0.25,3),V3(1.5,4),V3(2.75,3),V3(2.75,2),V3(3,0),V3(3,1)},
+	 W = {V3(-1.75,0),V3(-1.75,1),V3(-1.75,2),V3(-1.75,3),V3(-1.25,4),V3(.75,3),V3(2.25,4),V3(3.25,3),V3(3.25,2),V3(3.25,1),V3(3.25,0)},
+	 X = {V3(0,0),V3(0,1),V3(0,3),V3(0,4),V3(1.5,2),V3(3,0),V3(3,1),V3(3,3),V3(3,4)},
+	 Y = {V3(0,0),V3(0,1),V3(3,0),V3(3,1),V3(1.5,2),V3(1.5,3),V3(1.5,4)},
+	 Z = {V3(0,0),V3(1,0),V3(2,0),V3(3,0),V3(3,1),V3(2,2),V3(1,3),V3(0,4),V3(1,4),V3(2,4),V3(3,4)
+	}}
+	library[0] = {V3(2,0),V3(3,0),V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(0,5),V3(3,0),V3(3,0),V3(3,1),V3(3,2),V3(3,3),V3(3,4),V3(3,5),V3(2,5),V3(3,5)}
+	library[1] = {V3(-1,1),V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(0,5)}
+	library[2] = {V3(-1,1),V3(0,0),V3(1,0),V3(2,1),V3(2,2),V3(1,3),V3(0,4),V3(-1,5),V3(0,5),V3(1,5),V3(2,5)}
+	library[3] = {V3(0,0),V3(1,0),V3(1.5,1),V3(1.5,2),V3(1.5,3),V3(0.5,2.5),V3(1.5,4),V3(1,5),V3(0,5)}
+	library[4] = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(1,3),V3(2,3),V3(3,3),V3(3,1),V3(3,2),V3(3,0),V3(3,3),V3(3,4),V3(3,5)}
+	library[5] = {V3(0,2,0),V3(0,0,0),V3(2,0,0),V3(3,0,0),V3(0,1,0),V3(1,2,0),V3(2,3,0),V3(3,3,0),V3(3,4,0),V3(3,5,0),V3(2,5,0),V3(1,5,0),V3(0,4.9,0)}
+	library[6] = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,4),V3(0,5),V3(3,0),V3(3,3),V3(3,4),V3(3,5),V3(1,0),V3(2,0),V3(3,0),V3(1,5),V3(2,5),V3(3,5),V3(1,3),V3(2,3)}
+	library[7] = {V3(0,0),V3(1,0),V3(2,0),V3(3,0),V3(3,1),V3(3,2),V3(2,3),V3(2,2),V3(1,4),V3(1,5)}
+	library[8] = {V3(0,0),V3(0,1),V3(0,2),V3(0.5,3),V3(0,4),V3(0,5),V3(3,0),V3(3,1),V3(3,2),V3(2.5,3),V3(3,4),V3(3,5),V3(1,0),V3(2,0),V3(3,0),V3(1,5),V3(2,5),V3(3,5),V3(1,3),V3(2,2)}
+	library[9] = {V3(0,0),V3(0,1),V3(0,2),V3(0,3),V3(0,5),V3(3,0),V3(3,1),V3(3,2),V3(3,3),V3(3,4),V3(1,0),V3(2,0),V3(3,0),V3(1,5),V3(3,5),V3(1,3),V3(2,2)}
+	
+	library["."] = {V3(1.5,4)}
+    library["-"] = {V3(1.5,2)}
+	
+	local TaskLibrary = {task.wait,task.delay}
+	local _wait = TaskLibrary[1]
+
+--[[Notes: What is this, coding lesson 2021????
++x = left of char
+-x = right of car
++y = down 
+-y = up
++z = fwd
+-z = back
+]]
+	--_wait(1)
+	local function gCo()
+
+		local tbr = {}
+		for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if v.Name == "Vanilla Shake" then
+				table.insert(tbr,v)
+			end
+		end
+		return tbr
+
+	end
+
+	local GC = gCo()
+	--Center text. text is off centered (to left)
+	local TextOffset = V3(-5,-6,0)
+	local LastOffset = V3(-4,0,0)
+
+	local function PrepareNextLetter()
+		GC = gCo()
+		LastOffset = LastOffset + V3(7.5,0,0)
+	end
+
+	local function GenerateWord(Table)
+		PrepareNextLetter()
+		if Table ~= " " then
+			for i = 1,#Table do
+				GC[i].Parent = game.Players.LocalPlayer.Character
+				pcall(function()
+					GC[i].Handle.Mesh:Destroy()
+				end)
+				GC[i].Grip = GC[i].Grip + Table[i] + TextOffset + LastOffset
+				_wait()
+				GC[i].Parent = game.Players.LocalPlayer.Backpack
+				GC[i].Name = "UwU"
+			end
+		elseif Table == " " then
+			LastOffset = LastOffset - V3(4.5,0,0)
+		end
+		
+	end
+	local UwU = {}
+	for i = 1, SLength do
+		local currentLetter = string.sub(AI,i,i)
+		if library[currentLetter] then
+			table.insert(UwU,library[currentLetter])
+		elseif library[tonumber(currentLetter)] then
+			table.insert(UwU,library[tonumber(currentLetter)])
+		elseif currentLetter == " " then
+			table.insert(UwU, " ")
+		end
+	end
+	
+	local Generator = 0
+
+	for _,instance in pairs(UwU) do
+		if type(instance) == "table" then 
+			Generator = Generator + #instance
+		end
+	end
+	local fired 
+
+	local genericStatus,genericError = pcall(function()
+	for i = 1,Generator do
+	fireclickdetector(workspace.BarItems["Vanilla Shake"].ClickDetector)  end end)
+
+
+	local pillowCount = 0
+	repeat
+    		task.wait(.3)
+    		local counter = 0
+    		for _,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+        		if v.Name == "Vanilla Shake" then
+            		counter = counter + 1
+        	end
+    	end
+    	pillowCount = counter
+	until pillowCount == Generator
+
+	local r,w = pcall(function()
+		for i = 1,#UwU do
+			GenerateWord(UwU[i])
+		end end)
+
+	_wait((#UwU)*(5/100))
+
+	FA_SYNC()
+end)
+warn(p,s)
