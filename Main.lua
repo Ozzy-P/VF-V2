@@ -2,6 +2,8 @@ assert(tonumber(_G.Dampen) ~= nil and _G.Dampen > 0 and _G.Dampen < 8,"Invalid v
 local x = 0
 local y = -5
 local z = 10
+local Tracking = 1
+local SignScale = 1
 --[[
 Full Update Log (November): 
     (S;G) Unbroke the broke that was broke cause I'm dum.
