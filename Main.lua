@@ -140,6 +140,8 @@ local function GenerateWord(Table,edgeCase,NOF)
 		GC[i].Grip = (F_Frame + Table[i] + TextOffset + LastOffset) * TextRotation
 		GC[i].Parent = c.Backpack
 		GC[i].Parent = c.Character
+		task.wait()
+		GC[i].Parent = c.Backpack
 		GC[i].Name = "UwU"
 		table.insert(letter,GC[i])
 	end
@@ -223,7 +225,7 @@ function main()
 			table.insert(_G.Signs,tempS)
 			tempS = nil
 			_wait((#UwU)*(5/100))
-
+			pcall(function() c.Character["RightHand"]:Destroy() end)
 			for _ , Item in pairs(c.Backpack:GetChildren()) do
 				if Item:IsA('Tool') and Item.Name == "UwU" then
 					Item.Parent = c.Character
