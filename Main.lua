@@ -25,7 +25,7 @@ FA!
 --]]
 local service = setmetatable({ }, {__index = function(self, key)return game:GetService(key);end})
 local F_Frame = CFrame.new(0,0.5,0,1,0,90,0,1,0,0,0,1)
-local c= service.Players.LocalPlayer
+local c= game:GetService("Players").LocalPlayer
 if not _G.BindDisconnect then
 	_G.BindDisconnect = true
 	local QEvent;QEvent = service.UserInputService.InputBegan:Connect(function(x,Observable)
