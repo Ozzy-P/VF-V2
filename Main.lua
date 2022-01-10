@@ -187,7 +187,6 @@ function main()
 			end 
 		end)
 			foundCD = true
-	end
 	if not foundCD then
 		Message("Error","Attempt to index nil with gCo.")
 	end
@@ -609,9 +608,9 @@ if not _G.GlobalContextMenu then
 							local info = TweenInfo.new(_G.TweenRotateTime,
 								_G.EasingStyle,
 								Enum.EasingDirection.In,
-								0,p indefinitely)
-								false,goal)
-								0 ))
+								0,
+								false,
+								0 )
 							dSync()
 							local Goals = {TweenPos={Value = part.Grip * Rotate_Amount}}
 							local D_A = 0
@@ -667,7 +666,7 @@ if not _G.GlobalContextMenu then
 								Enum.EasingDirection.Out,
 								0,
 								false,
-								0 ))
+								0 )
 							dSync()
 							local Goals = {TweenPos={Value = part.Grip + addV}}
 							local D_A = 0
