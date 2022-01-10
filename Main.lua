@@ -137,6 +137,7 @@ local function GenerateWord(Table,edgeCase,NOF)
 			for _,v in pairs(GC[i]:GetChildren()) do
 				if v.Name ~= "Handle" then v:Destroy() end end
 		end)
+		c.Character["Right Arm"]:WaitForChild("RightGrip"):Destroy()
 		GC[i].Grip = (F_Frame + Table[i] + TextOffset + LastOffset) * TextRotation
 		GC[i].Parent = c.Backpack
 		GC[i].Parent = c.Character
